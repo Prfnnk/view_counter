@@ -68,6 +68,7 @@
   }
   &__set {
     font-size: 20px;
+    padding: 10px;
 
     & button {
       cursor: pointer;
@@ -79,9 +80,11 @@
       background-color: white;
       border-radius: 4px;
       border: 1px solid black;
+      opacity: 0.8;
+      outline: none;
 
       &:hover {
-        transform: scale(1.01);
+        opacity: 1;
       }
 
       &:disabled {
@@ -89,7 +92,7 @@
         background-color: rgba($color: grey, $alpha: 0.4);
 
         &:hover {
-          transform: none;
+          opacity: 0.8;
         }
       }
     }
@@ -114,12 +117,24 @@
 
 @media (max-width: 768px) {
   .main {
-    &-wrapper {
-      padding: 100px 82px;
-    }
-
     &__item {
       width: 48%;
+    }
+
+    &__set {
+      font-size: 14px;
+
+      & button {
+        font-size: 12px;
+        height: 20px;
+      }
+
+      &-input {
+        & input {
+          font-size: 12px;
+          height: 15px;
+        }
+      }
     }
   }
 }
@@ -127,10 +142,6 @@
 @media (min-width: 320px) and (max-width: 767px) {
   .main {
     display: block;
-
-    &-wrapper {
-      padding: 24px 16px;
-    }
 
     &__item {
       width: 100%;

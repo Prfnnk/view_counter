@@ -5,6 +5,7 @@ import { newsArr } from "../mock";
 
 const MainPage = () => {
   const [number, setNumber] = useState();
+
   const setInitialViews = () => {
     for (let item of newsArr) {
       localStorage.setItem(item.id, number);
@@ -13,20 +14,26 @@ const MainPage = () => {
   };
 
   return (
-    <div className="main">
-      {newsArr.map((item) => {
-        return (
-          <Link to={`/article/${item.id}`} key={item.id} className="main__item">
-            <div className="main__item-pic">
-              <img src={item.picture} alt={item.title} />
-            </div>
-            <div className="main__item-info">
-              <div className="main__item-title">{item.title}</div>
-              <div className="main__item-description">{item.description}</div>
-            </div>
-          </Link>
-        );
-      })}
+    <>
+      <div className="main">
+        {newsArr.map((item) => {
+          return (
+            <Link
+              to={`/article/${item.id}`}
+              key={item.id}
+              className="main__item"
+            >
+              <div className="main__item-pic">
+                <img src={item.picture} alt={item.title} />
+              </div>
+              <div className="main__item-info">
+                <div className="main__item-title">{item.title}</div>
+                <div className="main__item-description">{item.description}</div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
       <div className="main__set">
         <div className="main__set-title">
           Задать минимальное количество просмотров:
@@ -45,7 +52,7 @@ const MainPage = () => {
         </div>
         <button onClick={() => localStorage.clear()}>Сбросить просмотры</button>
       </div>
-    </div>
+    </>
   );
 };
 export default MainPage;

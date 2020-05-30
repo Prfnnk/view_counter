@@ -34,3 +34,28 @@
     opacity: 1;
   }
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .full {
+    padding-top: 20px;
+    &__info {
+      &-title {
+        font-size: 14px;
+      }
+
+      &-description {
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+
+      &-views {
+        font-size: 14px;
+        color: grey;
+      }
+    }
+  }
+
+  .arrow {
+    font-size: 12px;
+  }
+}
