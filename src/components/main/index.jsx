@@ -10,7 +10,13 @@ const MainPage = () => {
     for (let item of newsArr) {
       localStorage.setItem(item.id, number);
     }
+    alert(`Для всех страниц установлено количество просмотров: ${number}`);
     setNumber("");
+  };
+
+  const clearViews = () => {
+    localStorage.clear();
+    alert("Просмотры сброшены");
   };
 
   return (
@@ -50,7 +56,7 @@ const MainPage = () => {
             Задать
           </button>
         </div>
-        <button onClick={() => localStorage.clear()}>Сбросить просмотры</button>
+        <button onClick={() => clearViews()}>Сбросить просмотры</button>
       </div>
     </>
   );

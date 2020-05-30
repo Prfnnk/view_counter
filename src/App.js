@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import "./App.css";
 import MainPage from "./components/main";
 import FullPage from "./components/fullPage";
@@ -7,10 +7,10 @@ import FullPage from "./components/fullPage";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Route exact path={"/"} component={MainPage} />
         <Route path={"/article/:id"} component={FullPage} />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
